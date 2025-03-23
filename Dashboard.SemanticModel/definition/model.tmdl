@@ -1,0 +1,25 @@
+model Model
+	culture: es-CL
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: es-CL
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Temperatura_consolidado","CatastrodeEstacionesdelSistemaSACLIM","DiarioTs_consolidado"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.140.1577.0 (25.02)+00af0910c5ca19a229c472b0dfc17a2c488f6b0a
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Temperatura_consolidado
+ref table DateTableTemplate_c47b2866-88b6-45b2-8eb0-f8c23a7021a5
+ref table LocalDateTable_973a6fab-3667-4875-8a2a-8721e1963ab1
+ref table CatastrodeEstacionesdelSistemaSACLIM
+ref table DiarioTs_consolidado
+ref table LocalDateTable_fd05d9c4-8b9d-439d-a652-f1b5d7a465be
+
+ref cultureInfo es-CL
+

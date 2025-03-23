@@ -1,0 +1,79 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.61\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "filters": "[]",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{\"filterSortOrder\":3}",
+      "displayName": "Página 1",
+      "displayOption": 1,
+      "filters": "[{\"name\":\"13820a2f08e3a5b9d6c0\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Temperatura_consolidado\"}},\"Property\":\"momento\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"Temperatura_consolidado\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":3,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"momento\"}},\"Right\":{\"DateSpan\":{\"Expression\":{\"Literal\":{\"Value\":\"datetime'2025-01-01T00:00:00'\"}},\"TimeUnit\":5}}}}}]},\"type\":\"Advanced\",\"howCreated\":1,\"ordinal\":0},{\"name\":\"ebbdd4c50e8d08186072\",\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"DiarioTs_consolidado\"}},\"Property\":\"momento\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DiarioTs_consolidado\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":3,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"momento\"}},\"Right\":{\"DateSpan\":{\"Expression\":{\"Literal\":{\"Value\":\"datetime'2025-01-01T00:00:00'\"}},\"TimeUnit\":5}}}}}]},\"type\":\"Advanced\",\"howCreated\":1,\"ordinal\":1}]",
+      "height": 720.00,
+      "name": "31c75d80078567595692",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"0af78f368594eb583c22\",\"layouts\":[{\"id\":0,\"position\":{\"x\":52.1442570227307,\"y\":53.516474312802565,\"z\":0,\"width\":548.8869160287443,\"height\":241.51024305264747,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Temperatura_consolidado.momento.Variación.Jerarquía de fechas.Año\",\"active\":true},{\"queryRef\":\"Temperatura_consolidado.momento.Variación.Jerarquía de fechas.Trimestre\"},{\"queryRef\":\"Temperatura_consolidado.momento.Variación.Jerarquía de fechas.Mes\"},{\"queryRef\":\"Temperatura_consolidado.momento.Variación.Jerarquía de fechas.Día\"}],\"Y\":[{\"queryRef\":\"Sum(Temperatura_consolidado.Ts_Valor)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"Temperatura_consolidado\",\"Type\":0}],\"Select\":[{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Name\":\"Variación\",\"Property\":\"momento\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Año\"},\"Name\":\"Temperatura_consolidado.momento.Variación.Jerarquía de fechas.Año\",\"NativeReferenceName\":\"momento Año\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Name\":\"Variación\",\"Property\":\"momento\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Trimestre\"},\"Name\":\"Temperatura_consolidado.momento.Variación.Jerarquía de fechas.Trimestre\",\"NativeReferenceName\":\"momento Trimestre\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Name\":\"Variación\",\"Property\":\"momento\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Mes\"},\"Name\":\"Temperatura_consolidado.momento.Variación.Jerarquía de fechas.Mes\",\"NativeReferenceName\":\"momento Mes\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Name\":\"Variación\",\"Property\":\"momento\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Día\"},\"Name\":\"Temperatura_consolidado.momento.Variación.Jerarquía de fechas.Día\",\"NativeReferenceName\":\"momento Día\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"Ts_Valor\"}},\"Function\":1},\"Name\":\"Sum(Temperatura_consolidado.Ts_Valor)\",\"NativeReferenceName\":\"Promedio de Ts_Valor\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 241.51,
+          "width": 548.89,
+          "x": 52.14,
+          "y": 53.52,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"0d1dc84cb0782ab132bd\",\"layouts\":[{\"id\":0,\"position\":{\"x\":692.9697314862896,\"y\":478.90383423507933,\"z\":3001,\"width\":499.48709358615724,\"height\":192.1104206100605,\"tabOrder\":3001}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Temperatura_consolidado.momento.Variación.Jerarquía de fechas.Año\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"Temperatura_consolidado\",\"Type\":0}],\"Select\":[{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Name\":\"Variación\",\"Property\":\"momento\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Año\"},\"Name\":\"Temperatura_consolidado.momento.Variación.Jerarquía de fechas.Año\",\"NativeReferenceName\":\"momento Año\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 192.11,
+          "width": 499.49,
+          "x": 692.97,
+          "y": 478.90,
+          "z": 3001.00
+        },
+        {
+          "config": "{\"name\":\"81cd83c40d7ad4092583\",\"layouts\":[{\"id\":0,\"position\":{\"x\":52,\"y\":328,\"width\":513,\"height\":247,\"z\":3000,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"DiarioTs_consolidado.momento.Variación.Jerarquía de fechas.Año\",\"active\":true},{\"queryRef\":\"DiarioTs_consolidado.momento.Variación.Jerarquía de fechas.Trimestre\"},{\"queryRef\":\"DiarioTs_consolidado.momento.Variación.Jerarquía de fechas.Mes\"},{\"queryRef\":\"DiarioTs_consolidado.momento.Variación.Jerarquía de fechas.Día\"}],\"Y\":[{\"queryRef\":\"CountNonNull(DiarioTs_consolidado.Ts00_Valor)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"DiarioTs_consolidado\",\"Type\":0}],\"Select\":[{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Name\":\"Variación\",\"Property\":\"momento\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Año\"},\"Name\":\"DiarioTs_consolidado.momento.Variación.Jerarquía de fechas.Año\",\"NativeReferenceName\":\"momento Año\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Name\":\"Variación\",\"Property\":\"momento\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Trimestre\"},\"Name\":\"DiarioTs_consolidado.momento.Variación.Jerarquía de fechas.Trimestre\",\"NativeReferenceName\":\"momento Trimestre\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Name\":\"Variación\",\"Property\":\"momento\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Mes\"},\"Name\":\"DiarioTs_consolidado.momento.Variación.Jerarquía de fechas.Mes\",\"NativeReferenceName\":\"momento Mes\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Name\":\"Variación\",\"Property\":\"momento\"}},\"Hierarchy\":\"Jerarquía de fechas\"}},\"Level\":\"Día\"},\"Name\":\"DiarioTs_consolidado.momento.Variación.Jerarquía de fechas.Día\",\"NativeReferenceName\":\"momento Día\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Ts00_Valor\"}},\"Function\":1},\"Name\":\"CountNonNull(DiarioTs_consolidado.Ts00_Valor)\",\"NativeReferenceName\":\"Promedio de Ts00_Valor\"}]},\"autoSelectVisualType\":false,\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 247.00,
+          "width": 513.00,
+          "x": 52.00,
+          "y": 328.00,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"b37b9d1200996ab1adc4\",\"layouts\":[{\"id\":0,\"position\":{\"x\":692.9697314862896,\"y\":327.95993232717467,\"z\":2000,\"width\":558.4924370592472,\"height\":123.49955610646745,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"Temperatura_consolidado.CodigoNacional\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"t\",\"Entity\":\"Temperatura_consolidado\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"t\"}},\"Property\":\"CodigoNacional\"},\"Name\":\"Temperatura_consolidado.CodigoNacional\",\"NativeReferenceName\":\"CodigoNacional\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 123.50,
+          "width": 558.49,
+          "x": 692.97,
+          "y": 327.96,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"f0506081751d5bd880aa\",\"layouts\":[{\"id\":0,\"position\":{\"x\":673.7586894252836,\"y\":35.67764954186838,\"z\":1000,\"width\":587.3090001507563,\"height\":246.9991122129349,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"CatastrodeEstacionesdelSistemaSACLIM.Codigo Nacional\"},{\"queryRef\":\"CatastrodeEstacionesdelSistemaSACLIM.Nombre\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"c\",\"Entity\":\"CatastrodeEstacionesdelSistemaSACLIM\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Codigo Nacional\"},\"Name\":\"CatastrodeEstacionesdelSistemaSACLIM.Codigo Nacional\",\"NativeReferenceName\":\"Codigo Nacional\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"c\"}},\"Property\":\"Nombre\"},\"Name\":\"CatastrodeEstacionesdelSistemaSACLIM.Nombre\",\"NativeReferenceName\":\"Nombre\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 247.00,
+          "width": 587.31,
+          "x": 673.76,
+          "y": 35.68,
+          "z": 1000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

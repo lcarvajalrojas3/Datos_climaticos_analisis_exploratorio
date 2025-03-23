@@ -1,0 +1,155 @@
+
+Los parámetros registrados son:
+
+DiarioTs (Temperatura superficial diaria): --------------------------------------------------------------------------------------------
+
+Descripción: Se refiere a la temperatura de la superficie del suelo medida durante el día, generalmente a una altura de 2 metros sobre el nivel del suelo. Consiste en variables especificas asociadas a una temporalidad diaria:
+
+CodigoNacional; Estacion
+momento; Fecha (día)
+MediaCli_Valor; Media de referencia al clima local
+MediaAri_Valor; Media medida en el día
+NumDatos_Valor; Número de mediciones tomadas en el día
+Ts00_Valor; Temperatura a las 00
+Ts12_Valor; Temperatura a las 12
+Maxima_Valor; Máxima del día
+FechaMax_Valor; Hora de la máxima del día
+Minima_Valor; Minima del día
+FechaMin_Valor; Hora de la mínima del día
+FechaPro_Valor ¿valor pronosticado?
+
+
+
+
+Humedad: --------------------------------------------------------------------------------------------------------------------------------
+
+Descripción: Refleja la cantidad de vapor de agua presente en el aire, y puede expresarse como humedad relativa (porcentaje) o humedad absoluta (masa de agua por volumen de aire).
+
+Importancia: La humedad influye en el confort térmico, la probabilidad de precipitación, la formación de nieblas y nubes, y es esencial para entender los procesos de evapotranspiración.
+
+Presión QFF (Presión atmosférica a nivel de la superficie, con corrección para la temperatura): ----------------------------------------
+
+Descripción: Es la presión atmosférica medida en la superficie terrestre, corregida por la temperatura. Se obtiene ajustando la medición de la presión para compensar las variaciones de temperatura que pueden afectar la lectura de la presión.
+
+Importancia: La presión atmosférica es fundamental para el análisis de fenómenos meteorológicos como los vientos, frentes, tormentas y la circulación general de la atmósfera.
+
+TMaxima (Temperatura máxima diaria): ------------------------------------------------------------------------------------------
+
+Descripción: La temperatura más alta registrada durante el día.
+
+Importancia: Indica las condiciones de calor extremo, lo que puede tener implicaciones en la salud humana, el manejo de recursos hídricos y la agricultura.
+
+
+
+TMinima (Temperatura mínima diaria): ------------------------------------------------------------------------------------------
+
+Descripción: La temperatura más baja registrada durante el día.
+
+Importancia: La temperatura mínima afecta el ciclo de crecimiento de las plantas y la probabilidad de heladas, lo que es importante para la agricultura y la gestión de recursos naturales.
+
+
+
+
+Temperatura: ------------------------------------------------------------------------------------------------------------------------
+
+Descripción: Se refiere a la temperatura del aire medida durante el día, generalmente en grados Celsius.
+
+Importancia: Es uno de los parámetros climáticos más importantes, ya que influye en una amplia variedad de procesos atmosféricos, como la presión, la humedad y los vientos.
+
+CodigoNacional;
+momento; cada 3 horas
+dd_Valor; dirección del viento en grados
+ff_Valor; ,etros por segundo (m/s) o kilómetros por hora (km/h)
+VRB_Valor Variabilidad o a la fluctuación en la dirección del viento. -> indica tormentabilidad
+
+
+
+
+Viento: ----------------------------------------------------------------------------------------------------------------------------------
+
+Descripción: Medición de la velocidad del viento y, a veces, la dirección en la que se mueve.
+
+Importancia: El viento afecta la dispersión de contaminantes, la evaporación del agua, la formación de nubes y el transporte de calor entre diferentes áreas. Es crucial en estudios de climas extremos, como tormentas o huracanes.
+
+
+
+
+
+Presión QFE (Presión atmosférica a nivel del suelo): ------------------------------------------------------------------------------------------
+
+Descripción: Es la presión atmosférica medida a nivel del suelo sin correcciones.
+
+Importancia: Similar a la presión QFF, se utiliza principalmente en meteorología aeronáutica para determinar la altitud y las condiciones de vuelo en diferentes áreas.
+
+
+
+
+
+
+Agua24Horas (Precipitación acumulada en 24 horas): ---------------------------------------------------------------------------------------------
+
+Descripción: Mide la cantidad de agua precipitada en forma de lluvia durante un periodo de 24 horas.
+
+Importancia: Es esencial para determinar el balance hídrico, las inundaciones y la sequedad del suelo. También se usa en el pronóstico de lluvias y en la agricultura.
+
+
+CodigoNacional;
+momento; ventanas de 6 horas.
+RRR6_Valor; precipitacion acumulada milimetros
+Traza_Valor Medida de traza de solidos Partes por millón (ppm) o microgramos por litro (µg/L)
+
+
+
+
+
+
+Agua6Horas (Precipitación acumulada en 6 horas): ------------------------------------------------------------------------------------------
+
+Descripción: Mide la cantidad de agua precipitada en un intervalo de 6 horas.
+
+Importancia: Similar a Agua24Horas, pero para análisis más detallados, como la ocurrencia de lluvias intensas a corto plazo. Es importante para detectar tormentas rápidas.
+
+
+
+
+
+DiarioRR (Precipitación diaria registrada): ----------------------------------------------------------------------------------------------------
+
+Descripción: Es el total de precipitación que ha caído en un día, generalmente expresado en milímetros.
+
+Importancia: Es un parámetro central para estudiar el comportamiento de la lluvia, la humedad del suelo y la disponibilidad de agua en un área específica.
+
+
+
+
+Punto de Rocío: ----------------------------------------------------------------------------------------------------------------------------------
+
+Descripción: Es la temperatura a la cual el aire se satura y comienza a condensarse, formando gotas de agua.
+
+Importancia: Es un buen indicador de la humedad atmosférica. Un punto de rocío alto sugiere un aire muy húmedo, mientras que un punto bajo indica aire seco. También se utiliza para predecir la formación de nieblas y escarcha.
+
+
+
+
+
+Índice UVB: ----------------------------------------------------------------------------------------------------------------------------------
+
+Descripción: Es la medida de la radiación ultravioleta tipo B (UVB) que llega a la superficie de la Tierra.
+
+Importancia: La radiación UVB es responsable de quemaduras solares y tiene implicaciones para la salud humana, especialmente en términos de riesgo de cáncer de piel. También afecta la fotosíntesis de las plantas y el comportamiento de los ecosistemas.
+
+
+
+
+
+
+
+
+
+
+
+Conceptos ###################################
+
+Importancia de la temperatura: 
+
+La temperatura superficial es un indicador clave de las condiciones climáticas locales. Afecta la evapotranspiración, el crecimiento de las plantas, la formación de nubes y la temperatura ambiente.

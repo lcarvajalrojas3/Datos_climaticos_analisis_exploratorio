@@ -1,0 +1,61 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 74
+          },
+          "nodeIndex": "Temperatura_consolidado",
+          "nodeLineageTag": "a874e64c-b065-4737-b2b7-51e412773146",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 458,
+            "y": 0
+          },
+          "nodeIndex": "CatastrodeEstacionesdelSistemaSACLIM",
+          "nodeLineageTag": "0c78cd5c-25f3-45cd-be6f-38f1283cd864",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 742,
+            "y": 0
+          },
+          "nodeIndex": "DiarioTs_consolidado",
+          "nodeLineageTag": "218c9181-d6d5-4e2a-b9e8-2c7e2b52efc8",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "Todas las tablas",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Todas las tablas",
+  "defaultDiagram": "Todas las tablas"
+}

@@ -1,0 +1,15 @@
+Pendiente:
+
+
+-- Ordenar pipeline de generación / actualización de base
+    Raw:
+    - Espacio de datos raw
+    - Espacio de datos raw consolidados
+
+    Data:
+    - Datos consolidados limpios
+
+
+-- Aplicar estándar de calidad de datos:
+
+-> Revisión de NO pérdida de valores decimales

@@ -1,0 +1,51 @@
+table Temperatura_consolidado
+	lineageTag: a874e64c-b065-4737-b2b7-51e412773146
+
+	column CodigoNacional
+		dataType: int64
+		formatString: 0
+		lineageTag: a16981c7-61f2-4b03-b6d4-e8bf3b89e745
+		summarizeBy: none
+		sourceColumn: CodigoNacional
+
+		annotation SummarizationSetBy = Automatic
+
+	column momento
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 800dbdfb-bd31-4731-a0f0-ca587437500e
+		summarizeBy: none
+		sourceColumn: momento
+
+		variation Variación
+			isDefault
+			relationship: 0c4d1d6e-e52f-49be-9b15-0a6a49f6094f
+			defaultHierarchy: LocalDateTable_973a6fab-3667-4875-8a2a-8721e1963ab1.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ts_Valor
+		dataType: double
+		formatString: 0
+		lineageTag: 5f97e186-9f31-4916-8619-1a8fb2fe4832
+		summarizeBy: sum
+		sourceColumn: Ts_Valor
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Temperatura_consolidado = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents("C:\Users\lcarv\Documents\Proyectos\Datos_climaticos_analisis_exploratorio\data\Temperatura_consolidado.csv"),[Delimiter=";", Columns=3, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Valor reemplazado" = Table.ReplaceValue(#"Encabezados promovidos",".",",",Replacer.ReplaceText,{"Ts_Valor"}),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Valor reemplazado",{{"Ts_Valor", type number}}),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Tipo cambiado1",{{"CodigoNacional", Int64.Type}, {"momento", type datetime}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+

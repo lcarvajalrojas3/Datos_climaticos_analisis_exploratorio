@@ -1,0 +1,101 @@
+table CatastrodeEstacionesdelSistemaSACLIM
+	lineageTag: 0c78cd5c-25f3-45cd-be6f-38f1283cd864
+
+	column Column1
+		dataType: int64
+		formatString: 0
+		lineageTag: fef76f21-1dac-40cd-9453-fd66a2177132
+		summarizeBy: sum
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column NÂ°
+		dataType: int64
+		formatString: 0
+		lineageTag: 589e87c8-d642-430b-a0e5-383433e52c48
+		summarizeBy: sum
+		sourceColumn: NÂ°
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Codigo Nacional'
+		dataType: int64
+		formatString: 0
+		lineageTag: 002e7ce0-c0e2-4816-a82d-8db31e3c8fc4
+		summarizeBy: none
+		sourceColumn: Codigo Nacional
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Codigo WIGOS'
+		dataType: string
+		lineageTag: 5d13f68d-23c4-4754-b92d-52fdbdd68915
+		summarizeBy: none
+		sourceColumn: Codigo WIGOS
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Codigo OACI'
+		dataType: string
+		lineageTag: a29877e1-59cd-432b-a0d7-0a9ec1dc15ad
+		summarizeBy: none
+		sourceColumn: Codigo OACI
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nombre
+		dataType: string
+		lineageTag: 8289c0fc-37ad-4763-bb10-7e766acb14cc
+		summarizeBy: none
+		sourceColumn: Nombre
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitud
+		dataType: int64
+		formatString: 0
+		lineageTag: 03859f0e-9b15-4ae6-8610-367e7501dc83
+		summarizeBy: sum
+		sourceColumn: Latitud
+
+		annotation SummarizationSetBy = Automatic
+
+	column Longitud
+		dataType: int64
+		formatString: 0
+		lineageTag: ed0f0053-6dd8-4fe8-8159-a8c2fd8042f5
+		summarizeBy: sum
+		sourceColumn: Longitud
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Altitud (Mts)'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0dd1640a-058d-48c6-8c55-b0526f6fc1af
+		summarizeBy: sum
+		sourceColumn: Altitud (Mts)
+
+		annotation SummarizationSetBy = Automatic
+
+	column Propietario
+		dataType: string
+		lineageTag: 42aa2464-0056-45df-81bc-2ebbd99816d0
+		summarizeBy: none
+		sourceColumn: Propietario
+
+		annotation SummarizationSetBy = Automatic
+
+	partition CatastrodeEstacionesdelSistemaSACLIM = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents("C:\Users\lcarv\Documents\Proyectos\Datos_climaticos_analisis_exploratorio\data\CatastrodeEstacionesdelSistemaSACLIM.csv"),[Delimiter=",", Columns=10, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Encabezados promovidos",{{"", Int64.Type}, {"NÂ°", Int64.Type}, {"Codigo Nacional", Int64.Type}, {"Codigo WIGOS", type text}, {"Codigo OACI", type text}, {"Nombre", type text}, {"Latitud", Int64.Type}, {"Longitud", Int64.Type}, {"Altitud (Mts)", Int64.Type}, {"Propietario", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,130 @@
+table DiarioTs_consolidado
+	lineageTag: 218c9181-d6d5-4e2a-b9e8-2c7e2b52efc8
+
+	column CodigoNacional
+		dataType: int64
+		formatString: 0
+		lineageTag: f988bc70-e32c-446a-8f83-3b14a742ca09
+		summarizeBy: none
+		sourceColumn: CodigoNacional
+
+		annotation SummarizationSetBy = Automatic
+
+	column momento
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 348cf47d-adec-4a99-a778-8a1fc29af410
+		summarizeBy: none
+		sourceColumn: momento
+
+		variation Variación
+			isDefault
+			relationship: 8cd43ae9-2e92-4531-be91-9dd6780b8668
+			defaultHierarchy: LocalDateTable_fd05d9c4-8b9d-439d-a652-f1b5d7a465be.'Jerarquía de fechas'
+
+		annotation SummarizationSetBy = Automatic
+
+	column MediaCli_Valor
+		dataType: int64
+		formatString: 0
+		lineageTag: 99e9b4e2-4910-47b2-b2e6-8623d97b1d13
+		summarizeBy: sum
+		sourceColumn: MediaCli_Valor
+
+		annotation SummarizationSetBy = Automatic
+
+	column MediaAri_Valor
+		dataType: int64
+		formatString: 0
+		lineageTag: 6cdc2de4-5dfe-49c2-916b-a18df8d47c3a
+		summarizeBy: sum
+		sourceColumn: MediaAri_Valor
+
+		annotation SummarizationSetBy = Automatic
+
+	column NumDatos_Valor
+		dataType: int64
+		formatString: 0
+		lineageTag: d48d892b-5fe7-418b-9c07-c0ee1ab63bcc
+		summarizeBy: sum
+		sourceColumn: NumDatos_Valor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ts00_Valor
+		dataType: double
+		lineageTag: d55067c6-becf-4cd4-ae13-832eaea067f6
+		summarizeBy: sum
+		sourceColumn: Ts00_Valor
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Ts12_Valor
+		dataType: int64
+		formatString: 0
+		lineageTag: 007cb918-6617-405d-bc67-a7a28c75a68f
+		summarizeBy: sum
+		sourceColumn: Ts12_Valor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Maxima_Valor
+		dataType: int64
+		formatString: 0
+		lineageTag: da39f862-4ebc-4589-b15a-c096d4b9b346
+		summarizeBy: sum
+		sourceColumn: Maxima_Valor
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaMax_Valor
+		dataType: string
+		lineageTag: 88438d8d-7728-405d-9d12-2fec350362bc
+		summarizeBy: none
+		sourceColumn: FechaMax_Valor
+
+		annotation SummarizationSetBy = Automatic
+
+	column Minima_Valor
+		dataType: int64
+		formatString: 0
+		lineageTag: 1f8867bd-347c-4e00-8721-6b310817bd6d
+		summarizeBy: sum
+		sourceColumn: Minima_Valor
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaMin_Valor
+		dataType: string
+		lineageTag: 9de81476-43f4-40d0-87b5-e180a6cfe659
+		summarizeBy: none
+		sourceColumn: FechaMin_Valor
+
+		annotation SummarizationSetBy = Automatic
+
+	column FechaPro_Valor
+		dataType: string
+		lineageTag: fd1705ec-b971-422d-9783-b4f8f5f9b590
+		summarizeBy: none
+		sourceColumn: FechaPro_Valor
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DiarioTs_consolidado = m
+		mode: import
+		source =
+				let
+				    Origen = Csv.Document(File.Contents("C:\Users\lcarv\Documents\Proyectos\Datos_climaticos_analisis_exploratorio\data\DiarioTs_consolidado.csv"),[Delimiter=";", Columns=12, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Encabezados promovidos" = Table.PromoteHeaders(Origen, [PromoteAllScalars=true]),
+				    #"Valor reemplazado" = Table.ReplaceValue(#"Encabezados promovidos",".",",",Replacer.ReplaceText,{"Ts00_Valor"}),
+				    #"Tipo cambiado1" = Table.TransformColumnTypes(#"Valor reemplazado",{{"Ts00_Valor", type number}}),
+				    #"Tipo cambiado" = Table.TransformColumnTypes(#"Tipo cambiado1",{{"CodigoNacional", Int64.Type}, {"momento", type datetime}, {"MediaCli_Valor", Int64.Type}, {"MediaAri_Valor", Int64.Type}, {"NumDatos_Valor", Int64.Type}, {"Ts12_Valor", Int64.Type}, {"Maxima_Valor", Int64.Type}, {"FechaMax_Valor", type text}, {"Minima_Valor", Int64.Type}, {"FechaMin_Valor", type text}, {"FechaPro_Valor", type text}})
+				in
+				    #"Tipo cambiado"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navegación
+
