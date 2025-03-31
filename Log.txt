@@ -2,14 +2,21 @@ Pendiente:
 
 
 -- Ordenar pipeline de generación / actualización de base
+-- Reordenar archivos
     Raw:
     - Espacio de datos raw
     - Espacio de datos raw consolidados
 
-    Data:
+    data:
     - Datos consolidados limpios
 
 
 -- Aplicar estándar de calidad de datos:
 
 -> Revisión de NO pérdida de valores decimales
+
+
+
+Otros:
+
+Aprender a interactuar con la Api de página web de meteorología

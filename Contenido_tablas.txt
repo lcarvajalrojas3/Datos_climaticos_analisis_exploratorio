@@ -1,5 +1,4 @@
 
-Los parámetros registrados son:
 
 DiarioTs (Temperatura superficial diaria): --------------------------------------------------------------------------------------------
 
@@ -21,23 +20,78 @@ FechaPro_Valor ¿valor pronosticado?
 
 
 
+
+
+Temperatura: ------------------------------------------------------------------------------------------------------------------------
+
+Descripción: Se refiere a la temperatura del aire medida durante el día, generalmente en grados Celsius.
+
+Importancia: Es uno de los parámetros climáticos más importantes, ya que influye en una amplia variedad de procesos atmosféricos, como la presión, la humedad y los vientos.
+
+CodigoNacional;
+momento; Datetime cada 3 horas
+dd_Valor; Dirección del viento en grados
+ff_Valor; Metros por segundo (m/s) o kilómetros por hora (km/h)
+VRB_Valor Variabilidad o a la fluctuación en la dirección del viento. -> indica tormentabilidad
+
+
+
+
+
+
+
+
 Humedad: --------------------------------------------------------------------------------------------------------------------------------
 
 Descripción: Refleja la cantidad de vapor de agua presente en el aire, y puede expresarse como humedad relativa (porcentaje) o humedad absoluta (masa de agua por volumen de aire).
 
 Importancia: La humedad influye en el confort térmico, la probabilidad de precipitación, la formación de nieblas y nubes, y es esencial para entender los procesos de evapotranspiración.
 
+
+CodigoNacional;
+momento; Datetime cada 3 horas
+HR_Valor Humedad relativa, expresada en %
+
+
+
+
+
+
+
+
 Presión QFF (Presión atmosférica a nivel de la superficie, con corrección para la temperatura): ----------------------------------------
 
-Descripción: Es la presión atmosférica medida en la superficie terrestre, corregida por la temperatura. Se obtiene ajustando la medición de la presión para compensar las variaciones de temperatura que pueden afectar la lectura de la presión.
+Descripción: Es la presión atmosférica medida en la superficie terrestre, corregida por la temperatura. Se obtiene ajustando la medición de la presión al nivel del mar, diferenciándose de la medición de la estación de medición a su altura verdadera.
 
 Importancia: La presión atmosférica es fundamental para el análisis de fenómenos meteorológicos como los vientos, frentes, tormentas y la circulación general de la atmósfera.
+
+
+
+CodigoNacional;
+momento;
+QFF_Valor Medida de presión, hectopascales
+
+
+
+
+
+
+
 
 TMaxima (Temperatura máxima diaria): ------------------------------------------------------------------------------------------
 
 Descripción: La temperatura más alta registrada durante el día.
 
 Importancia: Indica las condiciones de calor extremo, lo que puede tener implicaciones en la salud humana, el manejo de recursos hídricos y la agricultura.
+
+CodigoNacional;
+momento; Date
+TxPM_Valor; Temperatura en °C
+FechaHora_Valor Datetime, probablemente de la hora de la temperatura máxima. Nota: Algunos valores se alejan mucho en tiempo de la fecha de medición, al parecer todas las mediciones previas a 1970
+
+
+
+
 
 
 
@@ -48,19 +102,14 @@ Descripción: La temperatura más baja registrada durante el día.
 Importancia: La temperatura mínima afecta el ciclo de crecimiento de las plantas y la probabilidad de heladas, lo que es importante para la agricultura y la gestión de recursos naturales.
 
 
-
-
-Temperatura: ------------------------------------------------------------------------------------------------------------------------
-
-Descripción: Se refiere a la temperatura del aire medida durante el día, generalmente en grados Celsius.
-
-Importancia: Es uno de los parámetros climáticos más importantes, ya que influye en una amplia variedad de procesos atmosféricos, como la presión, la humedad y los vientos.
-
 CodigoNacional;
-momento; cada 3 horas
-dd_Valor; dirección del viento en grados
-ff_Valor; ,etros por segundo (m/s) o kilómetros por hora (km/h)
-VRB_Valor Variabilidad o a la fluctuación en la dirección del viento. -> indica tormentabilidad
+momento; Date
+TnAM_Valor; Temperatura en °C
+FechaHora_Valor Datetime, probablemente de la hora de la temperatura máxima. Nota: Algunos valores se alejan mucho en tiempo de la fecha de medición, al parecer todas las mediciones previas a 1970
+
+
+
+
 
 
 
@@ -71,6 +120,13 @@ Descripción: Medición de la velocidad del viento y, a veces, la dirección en 
 
 Importancia: El viento afecta la dispersión de contaminantes, la evaporación del agua, la formación de nubes y el transporte de calor entre diferentes áreas. Es crucial en estudios de climas extremos, como tormentas o huracanes.
 
+CodigoNacional;
+momento;
+dd_Valor; Dirección del viento en grados
+ff_Valor; Velocidad del viento, probablemente en m/s -> Confirmar
+VRB_Valor 
+
+
 
 
 
@@ -80,6 +136,11 @@ Presión QFE (Presión atmosférica a nivel del suelo): ------------------------
 Descripción: Es la presión atmosférica medida a nivel del suelo sin correcciones.
 
 Importancia: Similar a la presión QFF, se utiliza principalmente en meteorología aeronáutica para determinar la altitud y las condiciones de vuelo en diferentes áreas.
+
+
+CodigoNacional; 
+momento; 
+QFF_Valor Valor de la presión atmosférica sin correcciones, expresado en hectopascales (hPa).
 
 
 
@@ -109,6 +170,12 @@ Descripción: Mide la cantidad de agua precipitada en un intervalo de 6 horas.
 
 Importancia: Similar a Agua24Horas, pero para análisis más detallados, como la ocurrencia de lluvias intensas a corto plazo. Es importante para detectar tormentas rápidas.
 
+CodigoNacional;
+momento; Datetime
+RRR6_Valor; Cantidad de precipitación acumulada en 6 horas, medida en milímetros (mm).
+Traza_Valor: Probablemente ppm de sólidos en agua
+
+
 
 
 
@@ -118,6 +185,17 @@ DiarioRR (Precipitación diaria registrada): -----------------------------------
 Descripción: Es el total de precipitación que ha caído en un día, generalmente expresado en milímetros.
 
 Importancia: Es un parámetro central para estudiar el comportamiento de la lluvia, la humedad del suelo y la disponibilidad de agua en un área específica.
+
+
+CodigoNacional;
+momento; DATETIME
+Total_Valor; Cantidad total de precipitación acumulada en 24 horas, medida en milímetros (mm).
+Traza_Valor; ¿Sólidos solubles? o BOOLEANO sobre "Indica si la precipitación fue mínima o insignificante (por ejemplo, valores tan bajos que pueden considerarse trazas de lluvia)".
+Parcial_Valor; Indica si el valor de precipitación registrado es parcial y no representa la totalidad del día.
+NumDatos_Valor; Cantidad de registros individuales utilizados para calcular el valor total de precipitación diaria.
+FechaPro_Valor Posiblemente indica la fecha de procesamiento o validación del dato.
+
+
 
 
 
@@ -130,6 +208,14 @@ Importancia: Es un buen indicador de la humedad atmosférica. Un punto de rocío
 
 
 
+CodigoNacional; 
+momento; DATETIME
+Td_Valor Temperatura del punto de rocío, generalmente expresada en grados Celsius (°C).
+
+
+
+
+
 
 
 Índice UVB: ----------------------------------------------------------------------------------------------------------------------------------
@@ -139,8 +225,9 @@ Descripción: Es la medida de la radiación ultravioleta tipo B (UVB) que llega 
 Importancia: La radiación UVB es responsable de quemaduras solares y tiene implicaciones para la salud humana, especialmente en términos de riesgo de cáncer de piel. También afecta la fotosíntesis de las plantas y el comportamiento de los ecosistemas.
 
 
-
-
+CodigoNacional;
+momento;
+IUV_Valor Nivel de radiación ultravioleta tipo B (UVB), expresado en una escala numérica.
 
 
 
